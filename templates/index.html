@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
@@ -17,16 +17,16 @@
 
     <p>Manage student records easily.</p>
 
-    <a href="add.html">
-        <button>Add Student</button>
+    <a href="/add">
+    <button>Add Student</button>
     </a>
 
-    <a href="update.html">
-        <button>Update Student</button>
+    <a href="/update">
+    <button>Update Student</button>
     </a>
 
-    <a href="display.html">
-        <button>Display Students</button>
+    <a href="/display">
+    <button>Display Students</button>
     </a>
 
 </div>
