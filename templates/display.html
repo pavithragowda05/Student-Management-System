@@ -26,14 +26,15 @@
 
 </tr>
 
-<tr>
+{% for student in students %}
+    <tr>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        <td>{{ student[3] }}</td>
+    </tr>
+    {% endfor %}
 
-<td>1BM22CS001</td>
-<td>Rahul</td>
-<td>2</td>
-<td>8.6</td>
-
-</tr>
 
 </table>
 

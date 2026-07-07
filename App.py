@@ -25,7 +25,10 @@ def update():
 
 @app.route("/display")
 def display():
-    return render_template("display.html")
+    sql = "SELECT * FROM Student"
+    cursor.execute(sql)
+    students = cursor.fetchall()
+    return render_template("display.html", students=students)
 
 @app.route("/save", methods=["POST"])
 def save():
