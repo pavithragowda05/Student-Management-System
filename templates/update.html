@@ -10,21 +10,20 @@
 </head>
 
 <body>
-
+<form action="/updatedata" method="POST">
 <div class="container">
 
 <h1>Update Student</h1>
-
-<input type="text" placeholder="Enter USN">
-
-<br><br>
-
-<input type="text" placeholder="New CGPA">
+<input type="text" name="usn" placeholder="Enter USN">
 
 <br><br>
 
-<button>Update</button>
+<input type="text" name="cgpa" placeholder="New CGPA">
 
+<br><br>
+
+<button type="submit">Update</button>
+</form>
 <br><br>
 
 <a href="/">

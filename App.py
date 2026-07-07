@@ -46,7 +46,15 @@ def save():
     db.commit()
     return render_template("index.html")
 
-
+@app.route("/updatedata",methods=["POST"])
+def updatedata():
+    usn=request.form["usn"]
+    cgpa=request.form["cgpa"]
+    sql="UPDATE Student set cgpa=%s where usn=%s"
+    values=(cgpa,usn)
+    cursor.execute(sql,values)
+    db.commit()
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
