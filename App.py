@@ -16,6 +16,7 @@ def home():
 
 @app.route("/add")
 def add():
+    
     return render_template("add.html")
 
 @app.route("/update")
@@ -43,6 +44,7 @@ def save():
     values=(usn ,name ,year ,cgpa)
     cursor.execute(sql,values)
     db.commit()
+    return render_template("index.html")
 
 
 
