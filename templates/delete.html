@@ -2,12 +2,13 @@
     <head>
         <title>Delete Student</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         </head>
         <body>
-            <form action="/deletedata" method="POST">
+            <form action="/deletedata" method="POST"  onsubmit="return deleteRecord()">
                 <div class="container">
                     <h1>delete Student</h1>
-                    <input type="text" name="usn" placeholder="Enter USN"><br>
+                    <input type="text" id="usn" name="usn" placeholder="Enter USN"><br>
                     <button>delete</button><br><br>
                 </form>
                     <a href="/">
