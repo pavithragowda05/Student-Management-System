@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Delete Student</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        </head>
+        <body>
+            <form action="/deletedata" method="POST">
+                <div class="container">
+                    <h1>delete Student</h1>
+                    <input type="text" name="usn" placeholder="Enter USN"><br>
+                    <button>delete</button><br><br>
+                </form>
+                    <a href="/">
+                        <button type="submit">Home</button>
+                    </a>
+                    <br>
+
+                </div>
+        </body>
+</html>

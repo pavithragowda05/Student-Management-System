@@ -23,6 +23,10 @@ def add():
 def update():
     return render_template("update.html")
 
+@app.route("/delete")
+def delete():
+    return render_template("delete.html")
+
 @app.route("/display")
 def display():
     sql = "SELECT * FROM Student"
@@ -55,6 +59,15 @@ def updatedata():
     cgpa=request.form["cgpa"]
     sql="UPDATE Student set cgpa=%s where usn=%s"
     values=(cgpa,usn)
+    cursor.execute(sql,values)
+    db.commit()
+    return render_template("index.html")
+
+@app.route("/deletedata",methods=["POST"])
+def deletedata():
+    usn=request.form["usn"]
+    sql="DELETE FROM Student where usn=%s"
+    values=(usn,)
     cursor.execute(sql,values)
     db.commit()
     return render_template("index.html")
