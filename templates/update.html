@@ -6,19 +6,20 @@
 <title>Update Student</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </head>
 
 <body>
-<form action="/updatedata" method="POST">
+<form action="/updatedata" method="POST" onsubmit="return updateRecord()">
 <div class="container">
 
 <h1>Update Student</h1>
-<input type="text" name="usn" placeholder="Enter USN">
+<input type="text" name="usn" id="usn" placeholder="Enter USN">
 
 <br><br>
 
-<input type="text" name="cgpa" placeholder="New CGPA">
+<input type="text" name="cgpa" id="cgpa" placeholder="New CGPA">
 
 <br><br>
 
@@ -26,9 +27,9 @@
 </form>
 <br><br>
 
-<a href="/">
-<button>Home</button>
-</a>
+<button type="button" onclick="window.location.href='/'">
+    Home
+</button>
 
 </div>
 

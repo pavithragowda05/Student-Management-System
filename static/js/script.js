@@ -21,6 +21,7 @@ function saveRecord() {
     let name= document.getElementById("name").value;
     let year=document.getElementById("year").value;
     let cgpa=document.getElementById("cgpa").value;
+    var pattern=/^1SI[0-9]{2}[A-Z]{2}[0-9]{3}$/
 
     if (usn === "") {
         alert("Enter a USN");
@@ -38,6 +39,40 @@ function saveRecord() {
         alert("enter a CGPA");
         return false;
     }
+     if(cgpa<0 || cgpa>10){
+        alert("cgpa must be greater than 10");
+        return false;
+    }
+    if(usn.length!==10){
+        alert("the length of usn must be 10");
+        return false;
+    }
+    if(!pattern.test(usn)){
+        alert("Enter a valid USN ");
+        return false;
+    }
 
+    return true;
+}
+function updateRecord() {
+    let usn = document.getElementById("usn").value;
+    let cgpa=document.getElementById("cgpa").value;
+    var pattern=/^1SI[0-9]{2}[A-Z]{2}[0-9]{3}$/
+    if (usn === "") {
+        alert("Enter a USN");
+        return false;
+    }
+    if(cgpa===""){
+        alert("enter a CGPA");
+        return false;
+    }
+    if(!pattern.test(usn)){
+        alert("Enter a valid USN ");
+        return false;
+    }
+    if(cgpa<0 || cgpa>10){
+        alert("cgpa must be greater than between 0 and 10");
+        return false;
+    }
     return true;
 }
