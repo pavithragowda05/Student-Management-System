@@ -5,31 +5,32 @@
 
     <title>Add Student</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </head>
 
 <body>
-<form action="/save" method="POST">
+<form action="/save" method="POST" onsubmit="return saveRecord()">
 <div class="container">
 
 <h1>Add Student</h1>
 
-<input type="text" name="usn" placeholder="Enter USN"><br><br>
+<input type="text" name="usn" placeholder="Enter USN" id="usn" oninput="this.value = this.value.toUpperCase()"><br><br>
 
-<input type="text" name="name" placeholder="Enter Name"><br><br>
+<input type="text" name="name" placeholder="Enter Name" id="name" oninput="this.value = this.value.toUpperCase()"><br><br>
 
-<input type="text" name="year" placeholder="Academic Year"><br><br>
+<input type="text" name="year" placeholder="Academic Year" id="year"><br><br>
 
-<input type="text" name="cgpa" placeholder="Enter CGPA">
+<input type="text" name="cgpa" placeholder="Enter CGPA" id="cgpa">
 
 <button type="submit">Save student</button>
 
 <br><br>
 
-<a href="/">
-    <button>Home</button>
-</a>
+<button type="button" onclick="window.location.href='/'">
+    Home
+</button>
 
 </div>
 </form>

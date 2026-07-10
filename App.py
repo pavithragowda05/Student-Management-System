@@ -12,6 +12,7 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 @app.route("/")
 def home():
+    
     return render_template("index.html")
 
 @app.route("/add")

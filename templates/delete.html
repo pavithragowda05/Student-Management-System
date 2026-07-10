@@ -1,21 +1,23 @@
 <html>
     <head>
         <title>Delete Student</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         </head>
         <body>
             <form action="/deletedata" method="POST"  onsubmit="return deleteRecord()">
                 <div class="container">
                     <h1>delete Student</h1>
-                    <input type="text" id="usn" name="usn" placeholder="Enter USN"><br>
-                    <button>delete</button><br><br>
-                </form>
-                    <a href="/">
-                        <button type="submit">Home</button>
-                    </a>
+                    <input type="text" id="usn" name="usn" placeholder="Enter USN" oninput="this.value = this.value.toUpperCase()"> <br>
+                    <button type="submit">delete</button><br><br>
+                    <button type="button" onclick="window.location.href='/'">Home</button>
+                </div>  
+                  
+            </form>
+                    
+                    
                     <br>
 
-                </div>
+                
         </body>
 </html>
