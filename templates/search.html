@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Search Student</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</head>
+
+<body>
+<form action="/searchdata" method="POST">
+    <div class="container">
+    <input type="text" name="usn" placeholder="Enter USN">
+    <button type="submit">Search</button>
+</form>
+<br><br>
+
+<button type="button" onclick="window.location.href='/'">
+    Home
+</button>
+
+</div>
+<div>
+    <h1>Student Records</h1>
+
+<table border="1">
+
+<tr>
+
+<th>USN</th>
+<th>Name</th>
+<th>Year</th>
+<th>CGPA</th>
+
+</tr>
+
+{% for student in students %}
+    <tr>
+        <td>{{ student[0] }}</td>
+        <td>{{ student[1] }}</td>
+        <td>{{ student[2] }}</td>
+        <td>{{ student[3] }}</td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+<br>
+</div>
+
+</body>
+
+</html>

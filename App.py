@@ -72,6 +72,17 @@ def deletedata():
     cursor.execute(sql,values)
     db.commit()
     return render_template("index.html")
+@app.route("/search")
+def searchpage():
+    return render_template("search.html")
 
+@app.route("/searchdata",methods=["GET","POST"])
+def search():
+    usn=request.form["usn"]
+    sql="SELECT * FROM Student WHERE usn = %s"
+    values=(usn,)
+    cursor.execute(sql,values)
+    student = cursor.fetchone()
+    return render_template("search.html", student=student)
 if __name__ == "__main__":
     app.run(debug=True)
