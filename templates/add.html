@@ -11,6 +11,55 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            🎓 Student Management System
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/add">Add</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/display">Display</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/search">Search</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/update">Update</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/delete">Delete</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
 <form action="/save" method="POST" onsubmit="return saveRecord()">
 <div class="container mt-5">
 
