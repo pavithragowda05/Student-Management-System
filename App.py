@@ -1,4 +1,4 @@
-from flask import Flask, render_template , request
+from flask import Flask, redirect, render_template , request
 
 app = Flask(__name__)
 import mysql.connector
@@ -84,5 +84,27 @@ def search():
     cursor.execute(sql,values)
     student = cursor.fetchone()
     return render_template("search.html", student=student)
+
+@app.route("/adminlogin")
+def adminlogin():
+    return render_template("login.html")
+
+@app.route("/login", methods=["POST"])
+def login():
+
+    username = request.form["username"]
+    password = request.form["password"]
+
+    if username == "admin" and password == "admin123":
+
+        return render_template("index.html")
+
+    else:
+
+        return "Invalid Username or Password"
+    
+@app.route("/logout")
+def logout():
+    return redirect("/")    
 if __name__ == "__main__":
     app.run(debug=True)
